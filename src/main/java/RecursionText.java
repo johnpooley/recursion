@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class Recursion {
+public class RecursionText {
 
-    Logger logger = Logger.getLogger(Recursion.class.getName());
+    Logger logger = Logger.getLogger(RecursionText.class.getName());
 
     public List<String> removeItemFromList(String item, List<String> list) {
         logger.info("recursion!");

@@ -4,9 +4,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RecursionTest {
+public class RecursionTextTest {
 
-    private final Recursion recursion = new Recursion();
+    private final RecursionText recursionText = new RecursionText();
 
     @Test
     public void removeItemFromListTest() {
@@ -14,7 +14,7 @@ public class RecursionTest {
         List<String> list = List.of("new", "new", "boots", "and", "panties");
         List<String> returnedList = List.of("new", "new", "and", "panties");
 
-        assertEquals(returnedList, recursion.removeItemFromList(item, list));
+        assertEquals(returnedList, recursionText.removeItemFromList(item, list));
     }
 
     @Test
@@ -23,6 +23,6 @@ public class RecursionTest {
         List<String> list = List.of("new", "boots", "new", "and", "new", "panties", "new");
         List<String> returnedList = List.of("boots", "and", "panties");
 
-        assertEquals(returnedList, recursion.removeAllInstancesOfItemFromList(item, list));
+        assertEquals(returnedList, recursionText.removeAllInstancesOfItemFromList(item, list));
     }
 }
