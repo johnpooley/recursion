@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RecursionMathsTest {
@@ -30,6 +32,13 @@ public class RecursionMathsTest {
         Long answer = 11L;
         Long computedAnswer = maths.minus(n, m);
         assertEquals(answer, computedAnswer);
+    }
+
+    @Test
+    public void addTupTest() {
+        List<Long> tup = List.of(1L, 2L, 3L, 4L);
+        Long answer = 10L;
+        assertEquals(answer, maths.addTup(tup));
     }
 
     @Test
