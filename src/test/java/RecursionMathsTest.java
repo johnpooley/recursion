@@ -14,11 +14,28 @@ public class RecursionMathsTest {
         Long computedAnswer = maths.plus(n, m);
         assertEquals(answer, computedAnswer);
     }
+    @Test
+    public void plusIntTest() {
+        int n = 5;
+        int m = 6;
+        Long answer = 11L;
+        Long computedAnswer = maths.plus(n, m);
+        assertEquals(answer, computedAnswer);
+    }
 
     @Test
     public void minusTest() {
         Long n = 17L;
         Long m = 6L;
+        Long answer = 11L;
+        Long computedAnswer = maths.minus(n, m);
+        assertEquals(answer, computedAnswer);
+    }
+
+    @Test
+    public void minusIntTest() {
+        int n = 17;
+        int m = 6;
         Long answer = 11L;
         Long computedAnswer = maths.minus(n, m);
         assertEquals(answer, computedAnswer);

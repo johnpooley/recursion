@@ -12,6 +12,14 @@ public class RecursionMaths {
 
         return 1L + plus(n, (m - 1L));
     }
+    public Long plus(int n, int m) {
+        if (m == 0L) {
+            return (long) n;
+        }
+        logger.info("increase by one");
+
+        return 1L + plus((long) n, ((long) m - 1L));
+    }
 
     public Long minus(Long n, Long m) {
         if (m == 0L) {
@@ -19,5 +27,13 @@ public class RecursionMaths {
         }
         logger.info("shrink by one");
         return -1L + minus(n, (m - 1L));
+    }
+
+    public Long minus(int n, int m) {
+        if (m == 0L) {
+            return (long) n;
+        }
+        logger.info("shrink by one");
+        return -1L + minus((long) n, ((long) m - 1L));
     }
 }
