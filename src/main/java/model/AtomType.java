@@ -1,6 +1,6 @@
 package model;
 
 public enum AtomType {
-    Word,
-    Number
+    WORD,
+    NUMBER
 }

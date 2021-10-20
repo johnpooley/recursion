@@ -12,7 +12,7 @@ public class AtomTest {
         Atom word2 = new Atom("word2");
         word2.setWord("word3");
         word1.setNumber(23L);
-        assertEquals(AtomType.Word, word1.getType());
+        assertEquals(AtomType.WORD, word1.getType());
         assertEquals(0L, word1.getNumber());
         assertEquals("word3", word2.getWord());
     }
@@ -24,7 +24,7 @@ public class AtomTest {
         number2.setWord("word3");
         number1.setNumber(23L);
         number2.setNumber(20);
-        assertEquals(AtomType.Number, number1.getType());
+        assertEquals(AtomType.NUMBER, number1.getType());
         assertEquals(23L, number1.getNumber());
         assertEquals("20", number2.getWord());
     }

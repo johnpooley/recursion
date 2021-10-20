@@ -9,22 +9,22 @@ public class Atom {
     public Atom(String word) {
         this.word = word;
         this.number = null;
-        this.type = AtomType.Word;
+        this.type = AtomType.WORD;
     }
 
     public Atom(Long number) {
         this.word = null;
         this.number = number;
-        this.type = AtomType.Number;
+        this.type = AtomType.NUMBER;
     }
     public Atom(int number) {
         this.word = null;
         this.number = (long) number;
-        this.type = AtomType.Number;
+        this.type = AtomType.NUMBER;
     }
 
     public Long getNumber() {
-        if (type == AtomType.Number) {
+        if (type == AtomType.NUMBER) {
         return number;
         } else {
             return 0L;
@@ -32,21 +32,21 @@ public class Atom {
     }
 
     public void setNumber(Long number) {
-        if (this.type != AtomType.Word) {
-            this.type = AtomType.Number;
+        if (this.type != AtomType.WORD) {
+            this.type = AtomType.NUMBER;
             this.number = number;
         }
     }
 
     public void setNumber(int number) {
-        if (this.type != AtomType.Word) {
-            this.type = AtomType.Number;
+        if (this.type != AtomType.WORD) {
+            this.type = AtomType.NUMBER;
             this.number = (long) number;
         }
     }
 
     public String getWord() {
-        if (this.type == AtomType.Word) {
+        if (this.type == AtomType.WORD) {
         return word;
         } else {
             return number.toString();
@@ -54,8 +54,8 @@ public class Atom {
     }
 
     public void setWord(String word) {
-        if (this.type != AtomType.Number) {
-            this.type = AtomType.Word;
+        if (this.type != AtomType.NUMBER) {
+            this.type = AtomType.WORD;
             this.word = word;
         }
     }

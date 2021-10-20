@@ -18,11 +18,11 @@ public class RecursionMaths {
     }
 
     public Atom plus(Atom n, Atom m) {
-        if (m.getNumber() == 0L || m.getType() != AtomType.Number) {
+        if (m.getNumber() == 0L || m.getType() != AtomType.NUMBER) {
             logger.info("second Atom is not a number");
             return n;
         }
-        if (n.getType() != AtomType.Number) {
+        if (n.getType() != AtomType.NUMBER) {
             logger.info("first Atom is not a number");
             return m;
         }
@@ -69,19 +69,19 @@ public class RecursionMaths {
             logger.info("end of line");
             return new Atom(0L);
         }
-        logger.info(String.valueOf(tup.get(0)));
+        logger.info(String.valueOf(ListMethods.car(tup)));
         return plus(ListMethods.car(tup), addTup(ListMethods.cdr(tup)));
     }
 
     public Atom addOne(Atom n) {
-        if (n.getType() != AtomType.Number) {
+        if (n.getType() != AtomType.NUMBER) {
             return n;
         }
         return new Atom(n.getNumber() + 1);
     }
 
     public Atom subOne(Atom n) {
-        if (n.getType() != AtomType.Number) {
+        if (n.getType() != AtomType.NUMBER) {
             return n;
         }
         if (n.getNumber() <= 0L ) {
