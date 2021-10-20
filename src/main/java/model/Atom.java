@@ -11,9 +11,15 @@ public class Atom {
         this.number = null;
         this.type = AtomType.Word;
     }
-    public Atom( Long number) {
+
+    public Atom(Long number) {
         this.word = null;
         this.number = number;
+        this.type = AtomType.Number;
+    }
+    public Atom(int number) {
+        this.word = null;
+        this.number = (long) number;
         this.type = AtomType.Number;
     }
 
@@ -29,6 +35,13 @@ public class Atom {
         if (this.type != AtomType.Word) {
             this.type = AtomType.Number;
             this.number = number;
+        }
+    }
+
+    public void setNumber(int number) {
+        if (this.type != AtomType.Word) {
+            this.type = AtomType.Number;
+            this.number = (long) number;
         }
     }
 

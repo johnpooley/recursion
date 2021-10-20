@@ -23,9 +23,10 @@ public class AtomTest {
         Atom number2 = new Atom(6L);
         number2.setWord("word3");
         number1.setNumber(23L);
+        number2.setNumber(20);
         assertEquals(AtomType.Number, number1.getType());
         assertEquals(23L, number1.getNumber());
-        assertEquals("6", number2.getWord());
+        assertEquals("20", number2.getWord());
     }
 
 
