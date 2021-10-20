@@ -15,6 +15,7 @@ public class RecursionMaths {
 
         return 1L + plus(n, (m - 1L));
     }
+
     public Atom plus(Atom n, Atom m) {
         if (m.getNumber() == 0L) {
             return n;
@@ -64,5 +65,19 @@ public class RecursionMaths {
         }
         logger.info(String.valueOf(tup.get(0)));
         return plus(ListMethods.car(tup), addTup(ListMethods.cdr(tup)));
+    }
+
+    public Atom subOne(Atom n) {
+        if (n.getNumber() > 0L) {
+            return new Atom(n.getNumber() - 1);
+        }
+        return new Atom(0L);
+    }
+
+    public Atom multiply(Atom n, Atom m) {
+        if (m.getNumber() == 0L) {
+            return new Atom(0);
+        }
+        return plus(n, (multiply(n, subOne(m))));
     }
 }

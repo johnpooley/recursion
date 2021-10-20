@@ -78,4 +78,12 @@ public class RecursionMathsTest {
         Long computedAnswer = maths.minus(n, m);
         assertEquals(answer, computedAnswer);
     }
+
+    @Test
+    public void multiplyTest() {
+        Atom two = new Atom(2);
+        Atom three = new Atom(3);
+        Long answer = 6L;
+        assertEquals(answer, maths.multiply(two, three).getNumber());
+    }
 }
