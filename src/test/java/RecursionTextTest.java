@@ -22,6 +22,14 @@ public class RecursionTextTest {
 
         assertEquals(returnedList, recursionText.removeItemFromList(item, list));
     }
+    @Test
+    public void removeNumberFromListTest() {
+        String item = number.getWord();
+        List<Atom> list = List.of(newWord, newWord, boots, and, panties, number);
+        List<Atom> returnedList = List.of(newWord, newWord, boots, and, panties);
+
+        assertEquals(returnedList, recursionText.removeItemFromList(item, list));
+    }
 
     @Test
     public void removeAllInstancesOfItemFromListTest() {
