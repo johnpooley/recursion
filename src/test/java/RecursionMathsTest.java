@@ -55,10 +55,19 @@ public class RecursionMathsTest {
     }
 
     @Test
+    public void minusAtomTest() {
+        Atom n = new Atom(17L);
+        Atom m = new Atom(6L);
+        Long answer = 11L;
+        Long computedAnswer = maths.minus(n, m).getNumber();
+        assertEquals(answer, computedAnswer);
+    }
+
+    @Test
     public void addTupTest() {
-        List<Long> tup = List.of(1L, 2L, 3L, 4L);
+        List<Atom> tup = List.of(new Atom(1L), new Atom(2), new Atom(3L), new Atom(4L), new Atom("word"));
         Long answer = 10L;
-        assertEquals(answer, maths.addTup(tup));
+        assertEquals(answer, maths.addTup(tup).getNumber());
     }
 
     @Test
