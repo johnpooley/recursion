@@ -1,4 +1,5 @@
 import model.Atom;
+import model.AtomType;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -17,12 +18,17 @@ public class RecursionMaths {
     }
 
     public Atom plus(Atom n, Atom m) {
-        if (m.getNumber() == 0L) {
+        if (m.getNumber() == 0L || m.getType() != AtomType.Number) {
+            logger.info("second Atom is not a number");
             return n;
+        }
+        if (n.getType() != AtomType.Number) {
+            logger.info("first Atom is not a number");
+            return m;
         }
         logger.info("increase by one");
 
-        return new Atom(1L + plus(n, (new Atom(m.getNumber() - 1L))).getNumber());
+        return addOne(plus(n, subOne(m)));
     }
 
     public Long plus(int n, int m) {
@@ -47,7 +53,7 @@ public class RecursionMaths {
             return n;
         }
         logger.info("shrink by one");
-        return new Atom(-1L + minus(n, (new Atom(m.getNumber() - 1L))).getNumber());
+        return subOne(minus(n, (subOne(m))));
     }
 
     public Long minus(int n, int m) {
@@ -67,11 +73,21 @@ public class RecursionMaths {
         return plus(ListMethods.car(tup), addTup(ListMethods.cdr(tup)));
     }
 
-    public Atom subOne(Atom n) {
-        if (n.getNumber() > 0L) {
-            return new Atom(n.getNumber() - 1);
+    public Atom addOne(Atom n) {
+        if (n.getType() != AtomType.Number) {
+            return n;
         }
-        return new Atom(0L);
+        return new Atom(n.getNumber() + 1);
+    }
+
+    public Atom subOne(Atom n) {
+        if (n.getType() != AtomType.Number) {
+            return n;
+        }
+        if (n.getNumber() <= 0L ) {
+            return new Atom(0L);
+        }
+        return new Atom(n.getNumber() - 1);
     }
 
     public Atom multiply(Atom n, Atom m) {
@@ -80,4 +96,5 @@ public class RecursionMaths {
         }
         return plus(n, (multiply(n, subOne(m))));
     }
+
 }

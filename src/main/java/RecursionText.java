@@ -22,8 +22,7 @@ public class RecursionText {
         logger.info("not the one");
         }
         List<Atom> newList = new ArrayList<>(removeItemFromList(item, list2));
-        newList.add(0, first);
-        return newList;
+        return ListMethods.cons(first, newList);
     }
 
     public List<Atom> removeAllInstancesOfItemFromList(String item, List<Atom> list) {

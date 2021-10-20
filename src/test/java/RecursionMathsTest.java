@@ -41,8 +41,10 @@ public class RecursionMathsTest {
         Atom n = new Atom(5L);
         Atom m = new Atom("word");
         Long answer = 5L;
-        Atom computedAnswer = maths.plus(m, n);
-        assertEquals(answer, computedAnswer.getNumber());
+        Atom computedAnswer1 = maths.plus(m, n);
+        Atom computedAnswer2 = maths.plus(n, m);
+        assertEquals(answer, computedAnswer1.getNumber());
+        assertEquals(answer, computedAnswer2.getNumber());
     }
 
     @Test
