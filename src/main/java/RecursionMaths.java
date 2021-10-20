@@ -1,3 +1,5 @@
+import model.Atom;
+
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -12,6 +14,14 @@ public class RecursionMaths {
         logger.info("increase by one");
 
         return 1L + plus(n, (m - 1L));
+    }
+    public Atom plus(Atom n, Atom m) {
+        if (m.getNumber() == 0L) {
+            return n;
+        }
+        logger.info("increase by one");
+
+        return new Atom(1L + plus(n, (new Atom(m.getNumber() - 1L))).getNumber());
     }
 
     public Long plus(int n, int m) {
