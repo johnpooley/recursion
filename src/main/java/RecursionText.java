@@ -18,9 +18,8 @@ public class RecursionText {
         if (first.getWord().equals(item)) {
             logger.info("found it!");
             return list2;
-        } else {
-        logger.info("not the one");
         }
+        logger.info("not the one");
         List<Atom> newList = new ArrayList<>(removeItemFromList(item, list2));
         return ListMethods.cons(first, newList);
     }

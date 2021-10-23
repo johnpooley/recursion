@@ -13,7 +13,6 @@ public class RecursionMaths {
             return n;
         }
         logger.info("increase by one");
-
         return 1L + plus(n, (m - 1L));
     }
 
@@ -27,7 +26,6 @@ public class RecursionMaths {
             return m;
         }
         logger.info("increase by one");
-
         return addOne(plus(n, subOne(m)));
     }
 
@@ -36,7 +34,6 @@ public class RecursionMaths {
             return (long) n;
         }
         logger.info("increase by one");
-
         return 1L + plus((long) n, ((long) m - 1L));
     }
 
