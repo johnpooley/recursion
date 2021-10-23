@@ -88,7 +88,7 @@ public class RecursionMaths {
     }
 
     public Atom multiply(Atom n, Atom m) {
-        if (m.getNumber() == 0L) {
+        if (m.getNumber().equals(0L) || n.getNumber().equals(0L)) {
             return new Atom(0);
         }
         return plus(n, (multiply(n, subOne(m))));
