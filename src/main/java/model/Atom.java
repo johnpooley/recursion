@@ -26,9 +26,8 @@ public class Atom {
     public Long getNumber() {
         if (type == AtomType.NUMBER) {
         return number;
-        } else {
-            return 0L;
         }
+        return 0L;
     }
 
     public void setNumber(Long number) {
@@ -48,9 +47,8 @@ public class Atom {
     public String getWord() {
         if (this.type == AtomType.WORD) {
         return word;
-        } else {
-            return number.toString();
         }
+        return number.toString();
     }
 
     public void setWord(String word) {

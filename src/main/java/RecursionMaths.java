@@ -17,7 +17,7 @@ public class RecursionMaths {
     }
 
     public Atom plus(Atom n, Atom m) {
-        if (m.getNumber() == 0L || m.getType() != AtomType.NUMBER) {
+        if (m.getNumber() == 0L) {
             logger.info("second Atom is not a number");
             return n;
         }
